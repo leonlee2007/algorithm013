@@ -5,6 +5,14 @@
 - deliberate practicing 刻意练习
 - feedback 反馈
 
+###切题四件套：
+ - Clarification
+ - Possible solutions 
+   - compare（time/space） 
+   - optimal（加强）
+- Coding（多写）
+- Test cases
+
 #### 五毒刷题法
 - 刷题第一遍：
     - 5分钟：读题+思考
@@ -25,22 +33,26 @@
 - 刷题第五遍：
     - 面试前一周恢复性训练
 
-#### 复杂度
+#### Big O notation
+- O(1): Constant Complexity 常数复杂度
+- O(log n): Logarithmic Complexity 对数复杂度
+- O(n): Linear Complexity 线性时间复杂度
+- O(n^2):N square Complexity 平方
+- O(n^3): N cubic Complexity 立方
+- O(2^n):Exponential Growth 指数
+- O(n!):Factorial 阶乘
+注意：只看最高复杂度的运算
 
-- 二分查找：log(n)
-- 二叉树遍历：O(n)，每个节点都访问一次且仅访问一次
-- 二维矩阵查找：O(n)，
-- 一维数组二分查找：log(n)
-- 归并排序：nlog(n)
-
-#### 数组(Array)
+#### 数组 Array
 定义：是一种线性表数据结构，用一组连续的内存空间，来存储一组具有相同类型的数据。
 
 特点：支持随机访问，根据下标随机访问的时间复杂度为 O(1)
 
 缺点：想要在数组中插入一个元素或者删除一个元素，为了保证其连续性，就需要做大量的数据搬移工作。
 
-#### 链表(Linked List)
+时间复杂度: 插入和删除是O(n)
+
+#### 链表 Linked List
 定义：链表就是通过指针将一组零散的内存块串连在一起。
 
 特点：
@@ -49,6 +61,10 @@
 
 缺点：
 链表要想随机访问第 k 个元素，就没有数组那么高效了。因为链表中的数据并非连续存储的，所以无法像数组那样，根据首地址和下标，通过寻址公式就能直接计算出对应的内存地址，而是需要根据指针一个结点一个结点地依次遍历，直到找到相应的结点。需要 O(n) 的时间复杂度。
+
+时间复杂度: 查询 O(n)
+
+#### 双向链表 Double Linked List
 
 #### 跳表(Skip List)
 跳表，对标的是平衡树和二分查找，是一种插入/删除/搜索都是O(log n) 的数据结构，跳表里面的元素始终是有序的。
