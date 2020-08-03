@@ -5,7 +5,7 @@
 - deliberate practicing 刻意练习
 - feedback 反馈
 
-###切题四件套：
+#### 切题四件套：
  - Clarification
  - Possible solutions 
    - compare（time/space） 
