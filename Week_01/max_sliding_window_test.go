@@ -19,6 +19,13 @@ func TestSlidingWindow(t * testing.T) {
   fmt.Println("output:", maxNums)
   fmt.Println("expect:", expect)
   fmt.Println("============End TestSlidingWindow=============")
+  queue := []int{1,2,3,4}
+  queue2 := queue[1:4]
+  queue3 := append(queue2, 100)
+  queue3[1] = 1000000
+  queue3[2] = 2000000
+  fmt.Println(queue2[1], queue3[1], queue[2])
+  fmt.Println(queue2[1], queue3[2], queue[3])
 }
 
 
@@ -149,15 +156,16 @@ func maxValue1(nums []int) int {
 //使用单调队列来求解，构建一个单调队列queue
 //queue里面的元素是单调递减的，而且长度小于等于滑动窗口的长度
 //时间复杂度: O(n)
-//空间复杂度: O(k)
+//空间复杂度: O(n)
 func maxSlidingWindow5(nums []int, k int) []int {
   if len(nums) == 0 { return nil}
   if k == 1 { return nums }
-  queue := []int{}
+  queue := make([]int, 0, len(nums))
   for i := 0; i < k ; i++ {
     queue = add_value_to_queue(queue, nums[i])
   }
-  res := []int{queue[0]}
+  res := make([]int, 0, len(nums) - k + 1)
+  res = append(res, queue[0])
   for i, j := 1, k; j < len(nums); i, j = i + 1, j + 1 {
     if nums[i - 1] == queue[0] {queue = queue[1:] }
     queue = add_value_to_queue(queue, nums[j])
