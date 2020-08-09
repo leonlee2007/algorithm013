@@ -101,3 +101,14 @@
 1. [HeapSort ：自学](https://www.geeksforgeeks.org/heap-sort/)
 2. [剑指 Offer 49. 丑数](https://leetcode-cn.com/problems/chou-shu-lcof/)
 3. [前 K 个高频元素 No.347](https://leetcode-cn.com/problems/top-k-frequent-elements/)
+
+####图（Graph） 
+
+####图的属性
+ * Graph(V, E)
+ * V - vertex;点
+      1. 度 - 入度和出度
+      2. 点与点是否联通
+ * E - edge: 边
+      1. 有向和无向（单行线）
+      2. 权重（边长）
