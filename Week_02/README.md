@@ -153,7 +153,7 @@
         queue.push(nodes)
   ```
 #### 图的高级算法
-[连通图个数-岛屿数量 No.200](https://leetcode-cn.com/problems/number-of-islands/)
-[拓扑排序（Topological Sorting](https://zhuanlan.zhihu.com/p/34871092)
-[最短路径（Shortest Path)](https://www.bilibili.com/video/av25829980?from=search&seid=13391343514095937158)
-[最小生成树（Minimum Spanning Tree）](https://www.bilibili.com/video/av25829980?from=search&seid=13391343514095937158)
+ 1. [连通图个数-岛屿数量 No.200](https://leetcode-cn.com/problems/number-of-islands/)
+ 2. [拓扑排序（Topological Sorting](https://zhuanlan.zhihu.com/p/34871092)
+ 3. [最短路径（Shortest Path)](https://www.bilibili.com/video/av25829980?from=search&seid=13391343514095937158)
+ 4. [最小生成树（Minimum Spanning Tree）](https://www.bilibili.com/video/av25829980?from=search&seid=13391343514095937158)
