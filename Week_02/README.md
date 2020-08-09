@@ -1,6 +1,6 @@
 ## 学习笔记
 
-#### 哈希表（Hash table） 
+### 哈希表（Hash table） 
     也叫散列表，是根据关键码值（Key value）而直接进行访问的数据结构
   通过关键码映射到表中一个位置来访问记录，以加快查找的速度
   这个映射函数叫作散列函数（Hash Function)
@@ -13,7 +13,7 @@
 2. [字母异位词分组 No.49](https://leetcode-cn.com/problems/group-anagrams/)
 3. [两数之和 No.1](https://leetcode-cn.com/problems/two-sum/description/)
 
-#### 树、二叉树、二叉搜索树的实现和特性
+### 树、二叉树、二叉搜索树的实现和特性
     Linked List 是特殊化的树
     Tree 是特殊化的Graph
 
@@ -73,7 +73,7 @@
 
 5. [N叉树的层序遍历 No.429](https://leetcode-cn.com/problems/n-ary-tree-level-order-traversal/)
 
-#### 堆（Heap） 
+### 堆（Heap） 
     Heap:可以迅速找到一堆数中的最大或者最小值的数据结构
     根节点最大的叫大根堆，根节点最小的叫小根堆
     常见的有二叉堆，斐波那契堆
@@ -105,7 +105,7 @@
 2. [剑指 Offer 49. 丑数](https://leetcode-cn.com/problems/chou-shu-lcof/)
 3. [前 K 个高频元素 No.347](https://leetcode-cn.com/problems/top-k-frequent-elements/)
 
-#### 图的属性（Graph） 
+### 图（Graph） 
  * Graph(V, E)
  * V - vertex;点
       1. 度 - 入度和出度
@@ -152,7 +152,7 @@
         nodes = generate_related_nodes(node)
         queue.push(nodes)
   ```
-####图的高级算法
+#### 图的高级算法
 [连通图个数-岛屿数量 No.200](https://leetcode-cn.com/problems/number-of-islands/)
 [拓扑排序（Topological Sorting](https://zhuanlan.zhihu.com/p/34871092)
 [最短路径（Shortest Path)](https://www.bilibili.com/video/av25829980?from=search&seid=13391343514095937158)
