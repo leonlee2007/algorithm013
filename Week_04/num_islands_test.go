@@ -48,6 +48,9 @@ func TestNumIslands(t * testing.T) {
   ret := numIslands1(grid)
   fmt.Println("input:", grid)
   fmt.Println("output:", ret)
+  m := make(map[int]int)
+  x:= m[111]
+  fmt.Println("======:", x)
   fmt.Println("============End TestNumIslands=============")
 }
 

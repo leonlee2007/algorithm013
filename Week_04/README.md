@@ -1,59 +1,230 @@
 # 学习笔记
 
-## 递归（Recursion） 
-    递归-循环
-    通过函数体来进行循环
+## 数据结构
 
-### 递归代码模板
+```python
+class TreeNode:
+  def __init__(self, val):
+    self.val = val
+    self.left, self.right = None, None
+```
 
-```go
-func recur(level int, param int) {
-  //recursion terminator(递归终结者)
-  //把函数终止条件写上。否则会死循环，只有递没有归！！！
-  if (level > MAX_LEVEL) {
-    return
-  }
-  //process current logic（处理当前层逻辑）
-  //完成本层需要的逻辑
-  process(level, param)
-  //drill down（下探到下一层）
-    //需要用参数标记当前是哪一层并把参数放进去
-  recur(level + 1, newParam)
-  //reverse the current level status if needed(清理当前层)
-  //如果递归完了，这一层有些东西可能需要清理
+```c++
+struct TreeNode {
+  int val;
+  TreeNode *left;
+  TreeNode *right;
+  TreeNode(int x):val(x), left:(NULL), right(NULL){}
 }
 ```
-		1. terminator
-		2. process
-		3. drill down
-		4. reverse status
-### 思维要点
 
-	1. 抵制人肉递归
-		不要人肉递归（即用人类的思维一个一个去枚举），为难自己。这是递归的一大思维误区。
-		当我们看递归代码时，总是忍不住跟着递归一遍又一遍。
-		简单的场景还好，复杂一些的，很容易进得去出不来，迷失了。
-		前期可以画出递归树，但后期要逐渐养成直接看函数本身就开始写。
-	2. 找最近重复子问题（计算机最擅长计算具有重复性的问题）
-		找到最小可重复的步骤
-		找到终止条件
-	3. 数学归纳思维
-		从n成立推导出n+1也成立。没有反例即正确
+```go
+type TreeNode struct {
+	val   int
+	left, right *TreeNode
+}
 
-### 实战练习题目
+```
 
-1. [爬楼梯 No.70]( https://leetcode-cn.com/problems/climbing-stairs/)
-2. [ 括号生成 No.22](https://leetcode-cn.com/problems/generate-parentheses/)
-3. [翻转二叉树 No.226]( https://leetcode-cn.com/problems/invert-binary-tree/description/)
-4. [验证二叉搜索树 No.98]( https://leetcode-cn.com/problems/validate-binary-search-tree)
-5. [ 二叉树的最大深度 No.104]( https://leetcode-cn.com/problems/maximum-depth-of-binary- tree)
-6. [ 二叉树的最小深度 No.111]( https://leetcode-cn.com/problems/minimum-depth-of-binary-tree)
-7. [二叉树的序列化与反序列化 No.297]( https://leetcode-cn.com/problems/serialize-and-deserialize- binary-tree/)
-8. [二叉树的最近公共祖先 No.236]( https://leetcode-cn.com/problems/lowest-common-ancestor- of-a-binary-tree/)
-9. [从前序与中序遍历序列构造二叉树 No.105]( https://leetcode-cn.com/problems/construct-binary-tree-from- preorder-and-inorder-traversal)
-10. [组合 No.77](https://leetcode-cn.com/problems/combinations/)
-11. [全排列 No.46]( https://leetcode-cn.com/problems/permutations/ https://leetcode-cn.com/problems/permutations-ii/)
-12. [全排列 II No.47]( https://leetcode-cn.com/problems/permutations/ https://leetcode-cn.com/problems/permutations-ii/)
+## 搜索-遍历
+
+*	每个节点都要访问一次
+*	每个节点仅仅要访问一次
+*	对于节点的访问顺序不限
+  - 深度优先：depth first search
+  - 广度优先：breadth first search
+  - 优先级优先：启发式搜索
+  - 其他优先
+
+## 深度优先搜索 Depth-First-Search（DFS 代码模板） 
+
+#### 递归写法
+
+```python
+#Python
+visited = set() 
+
+def dfs(node, visited):
+    if node in visited: # terminator
+    	# already visited 
+    	return 
+
+	visited.add(node) 
+
+	# process current node here. 
+	...
+	for next_node in node.children(): 
+		if next_node not in visited: 
+			dfs(next_node, visited)
+```
+```c++
+//C/C++
+//递归写法：
+map<int, int> visited;
+void dfs(Node* root) {
+  // terminator
+  if (!root) return ;
+
+  if (visited.count(root->val)) {
+    // already visited
+    return ;
+  }
+
+  visited[root->val] = 1;
+  // process current node here. 
+  // ...
+  for (int i = 0; i < root->children.size(); ++i) {
+    dfs(root->children[i]);
+  }
+  return ;
+}
+```
+```go
+//Go DFS
+//visited := make(map[int]int)
+var visited map[*Node]int
+func dfs(root *Node) {
+  // terminator
+  if root == nil {return}
+    // already visited 
+  if visited[root] == 1 {return}
+  visited[root] = 1
+  // process current node here. 
+  // ...
+  for i := 0; i <  len(root.children); i ++) {
+    dfs(root.children[i])
+  }
+  return
+}
+```
+
+
+
+#### 非递归写法
+
+```python
+#Python
+def DFS(self, tree): 
+
+	if tree.root is None: 
+		return [] 
+	visited, stack = [], [tree.root]
+	while stack: 
+		node = stack.pop() 
+		visited.add(node)
+
+		process (node) 
+		nodes = generate_related_nodes(node) 
+		stack.push(nodes) 
+
+	# other processing work 
+	...
+```
+
+```c++
+//C/C++
+//非递归写法：
+void dfs(Node* root) {
+  map<int, int> visited;
+  if(!root) return ;
+
+  stack<Node*> stackNode;
+  stackNode.push(root);
+
+  while (!stackNode.empty()) {
+    Node* node = stackNode.top();
+    stackNode.pop();
+    if (visited.count(node->val)) continue;
+    visited[node->val] = 1;
+
+    for (int i = node->children.size() - 1; i >= 0; --i) {
+        stackNode.push(node->children[i]);
+    }
+  }
+
+  return ;
+}
+```
+
+##  广度优先搜索 Breadth-First-Search(BFS 代码模板)
+
+```python
+# Python
+def BFS(graph, start, end):
+    visited = set()
+	queue = [] 
+	queue.append([start]) 
+	while queue: 
+		node = queue.pop() 
+		visited.add(node)
+		process(node) 
+		nodes = generate_related_nodes(node) 
+		queue.push(nodes)
+	# other processing work 
+	...
+```
+
+```c
+// C/C++
+void bfs(Node* root) {
+  map<int, int> visited;
+  if(!root) return ;
+
+  queue<Node*> queueNode;
+  queueNode.push(root);
+
+  while (!queueNode.empty()) {
+    Node* node = queueNode.top();
+    queueNode.pop();
+    if (visited.count(node->val)) continue;
+    visited[node->val] = 1;
+
+    for (int i = 0; i < node->children.size(); ++i) {
+        queueNode.push(node->children[i]);
+    }
+  }
+  return ;
+}
+```
+
+```go
+// GO BFS
+//visited := make(map[int]int)
+var visited map[*Node]int
+func bfs(root *Node) { 
+  if(root == nil) {return} ;	
+  queue := []*Node{root}
+  while (len(queue) > 0) {
+    Node* node = queue[0]
+    queue := queue[1:len(queue)]
+    if visited[node] == 1 {continue}
+    visited[node] = 1;
+    for (int i = 0; i < len(node.children); i ++) {
+      queue = append(queue, node.children[i])
+    }
+  }
+  return
+}
+```
+
+## 实战题目
+
+- [二叉树的层序遍历](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/#/description)（字节跳动、亚马逊、微软在半年内面试中考过）
+- [最小基因变化](https://leetcode-cn.com/problems/minimum-genetic-mutation/#/description)
+- [括号生成](https://leetcode-cn.com/problems/generate-parentheses/#/description)（字节跳动、亚马逊、Facebook 在半年内面试中考过）
+- [在每个树行中找最大值](https://leetcode-cn.com/problems/find-largest-value-in-each-tree-row/#/description)（微软、亚马逊、Facebook 在半年内面试中考过）
+
+## 课后作业
+
+- [单词接龙](https://leetcode-cn.com/problems/word-ladder/description/)（亚马逊在半年内面试常考）
+- [单词接龙 II ](https://leetcode-cn.com/problems/word-ladder-ii/description/)（微软、亚马逊、Facebook 在半年内面试中考过）
+- [岛屿数量](https://leetcode-cn.com/problems/number-of-islands/)（近半年内，亚马逊在面试中考查此题达到 350 次）
+- [扫雷游戏](https://leetcode-cn.com/problems/minesweeper/description/)（亚马逊、Facebook 在半年内面试中考过）
+
+## 参考链接
+
+- [DFS 代码模板（递归写法、非递归写法）](https://shimo.im/docs/UdY2UUKtliYXmk8t/)
+- [BFS 代码模板](https://shimo.im/docs/ZBghMEZWix0Lc2jQ/)
 
 
 
