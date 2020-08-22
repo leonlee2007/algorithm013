@@ -50,7 +50,7 @@ func TestNumIslands(t * testing.T) {
   fmt.Println("output:", ret)
   m := make(map[int]int)
   x:= m[111]
-  fmt.Println("======:", x)
+  fmt.Println("======:", x, 20 / 3)
   fmt.Println("============End TestNumIslands=============")
 }
 
