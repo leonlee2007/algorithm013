@@ -74,18 +74,38 @@
 
 优势：原理简单，容易实现，方便扩展，效率最高
 
-#### 实战练习题目 - Array
-1. [盛最多水的容器 No.11](https://leetcode-cn.com/problems/container-with-most-water/)
-2. [移动零 No.283](https://leetcode-cn.com/problems/move-zeroes/)
-3. [爬楼梯 No.70](https://leetcode-cn.com/problems/climbing-stairs/)
-4. [三数之和 No.15](https://leetcode-cn.com/problems/3sum/)
+#### 参考链接
 
-#### 实战练习题目 - Linked List
-1. [反转链表 No.206](https://leetcode-cn.com/problems/reverse-linked-list/)
-2. [两两交换链表中的节点 No.24](https://leetcode-cn.com/problems/swap-nodes-in-pairs/)
-3. [环形链表 No.141](https://leetcode-cn.com/problems/linked-list-cycle/)
-4. [环形链表 II No.142](https://leetcode-cn.com/problems/linked-list-cycle-ii/)
-5. [K 个一组翻转链表 No.25](https://leetcode-cn.com/problems/reverse-nodes-in-k-group/)
+- [Java 源码分析（ArrayList）](http://developer.classpath.org/doc/java/util/ArrayList-source.html)
+- [Linked List 的标准实现代码](http://www.geeksforgeeks.org/implementing-a-linked-list-in-java-using-class/)
+- [Linked List 示例代码](http://www.cs.cmu.edu/~adamchik/15-121/lectures/Linked Lists/code/LinkedList.java)
+- [Java 源码分析（LinkedList）](http://developer.classpath.org/doc/java/util/LinkedList-source.html)
+- LRU Cache - Linked list：[ LRU 缓存机制](http://leetcode-cn.com/problems/lru-cache)
+- Redis - Skip List：[跳跃表](http://redisbook.readthedocs.io/en/latest/internal-datastruct/skiplist.html)、[为啥 Redis 使用跳表（Skip List）而不是使用 Red-Black？](http://www.zhihu.com/question/20202931)
+
+#### Array 实战题目
+
+- [两数之和](https://leetcode-cn.com/problems/two-sum/)（近半年内，字节跳动在面试中考查此题达到 152 次）
+- [盛最多水的容器](https://leetcode-cn.com/problems/container-with-most-water/)（腾讯、百度、字节跳动在近半年内面试常考）
+- [移动零](https://leetcode-cn.com/problems/move-zeroes/)（华为、字节跳动在近半年内面试常考）
+- [爬楼梯](https://leetcode.com/problems/climbing-stairs/)（阿里巴巴、腾讯、字节跳动在半年内面试常考）
+- [三数之和](https://leetcode-cn.com/problems/3sum/)（国内、国际大厂历年面试高频老题）
+
+#### Linked List 实战题目
+
+- [反转链表](https://leetcode.com/problems/reverse-linked-list/)（字节跳动、亚马逊在半年内面试常考）
+- [两两交换链表中的节点](https://leetcode.com/problems/swap-nodes-in-pairs)（阿里巴巴、字节跳动在半年内面试常考）
+- [环形链表](https://leetcode.com/problems/linked-list-cycle)（阿里巴巴、字节跳动、腾讯在半年内面试常考）
+- [环形链表 II](https://leetcode.com/problems/linked-list-cycle-ii)
+- [K 个一组翻转链表](https://leetcode.com/problems/reverse-nodes-in-k-group/)（字节跳动、猿辅导在半年内面试常考）
+
+
+
+
+
+
+
+
 
 #### Homework
 1. [删除排序数组中的重复项 No.26](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/)
